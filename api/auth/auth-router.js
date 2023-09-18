@@ -61,9 +61,9 @@ router.post("/login", checkUsernameExists, (req, res, next) => {
 
 function generateToken(user) {
   const payload = {
-    subject: user.id,
+    subject: user.user_id,
     username: user.username,
-    role: user.role_name,
+    role_name: user.role_name,
   };
   const options = {
     expiresIn: "1d",
